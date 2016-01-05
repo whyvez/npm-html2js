@@ -49,6 +49,10 @@ while (args.length) {
     case '--quotes':
       opts.quotes = true
       break;
+    case '-p':
+    case '--pretty':
+      opts.pretty = true
+      break;
     default:
       break;
   }

@@ -22,6 +22,7 @@ module.exports = function(opts, callback) {
   var basePath   = opts.basePath;
   var quotes     = opts.quotes;
   var exclude    = opts.exclude || '';
+  var pretty     = opts.pretty;
 
   glob(tplPath, function (err, files) {
     if (err)
@@ -52,7 +53,7 @@ module.exports = function(opts, callback) {
           if (basePath)
             route = route.replace(basePath + '/', '');
           if (route.indexOf('.jade') !== -1)
-            html = jade.render(html, { pretty: true });
+            html = jade.render(html, { pretty: pretty });
 
           html = html.replace(/\\/g, '\\\\');
           html = html.replace(/'/g, '\\\'');
