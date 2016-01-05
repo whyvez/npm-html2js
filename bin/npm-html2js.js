@@ -53,6 +53,10 @@ while (args.length) {
     case '--pretty':
       opts.pretty = true
       break;
+    case '-ext':
+    case '--extention':
+      opts.extention = args.shift()
+      break;
     default:
       break;
   }
